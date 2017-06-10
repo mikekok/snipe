@@ -1,0 +1,89 @@
+// main: ../style.scss
+
+body {
+  background: linear-gradient(rgba($black, $bg_opacity), rgba($red, $bg_opacity)), url('../img/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: $white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  -webkit-user-select: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .downloads {
+    display: flex;
+    margin-bottom: 10px;
+
+    select.format {
+      padding: 15px 20px;
+      border-radius: 5px 0 0 5px;
+      border: none;
+      outline: none;
+      background-color: rgba($black, .3);
+      color: $white;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      -webkit-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+
+      &:hover {
+        background: linear-gradient(to left, rgba($black, .3) 0%, rgba($black, .5) 100%);
+      }
+
+      option {
+        background-color: $black;
+      }
+    }
+
+    input {
+      padding: 15px 20px;
+      border: none;
+      outline: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      color: $white;
+      background-color: rgba($black, .3);
+
+      &.download {
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+
+        &:hover {
+          background: linear-gradient(to right, rgba($black, .3) 0%, rgba($black, .5) 100%);
+        }
+      }
+    }
+  }
+
+  .info {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: none;
+
+    .video {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: rgba($black, .3);
+
+      h3 {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+::-webkit-input-placeholder {
+  color: rgba($white, .3);
+}

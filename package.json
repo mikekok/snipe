@@ -1,0 +1,17 @@
+{
+  "name": "snipe",
+  "version": "1.0.0",
+  "description": "A YouTube video downloader",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --platform linux --icon ./assets/img/icon.ico"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  },
+  "dependencies": {
+    "youtube-dl": "^1.11.1"
+  }
+}

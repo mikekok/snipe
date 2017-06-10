@@ -1,0 +1,28 @@
+// main: ../style.scss
+
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  -webkit-app-region: drag;
+
+  .exit {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+  }
+
+  .mini {
+    position: fixed;
+    top: 17px;
+    right: 40px;
+    cursor: pointer;
+    font-size: 12px;
+    -webkit-app-region: no-drag;
+  }
+}

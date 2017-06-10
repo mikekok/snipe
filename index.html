@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Snipe</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  Styles -->
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="title">Snipe</div>
+        <div class="exit"><i class="fa fa-times"></i></div>
+        <div class="mini"><i class="fa fa-window-minimize"></i></div>
+    </div>
+
+    <div class="container">
+        <div class="downloads">
+            <select class="format">
+              <option value="MP3">MP3</option>
+              <option value="MP4">MP4</option>
+            </select>
+            <input class="url" type="text" placeholder="Enter a youtube video url...">
+            <input class="download" type="submit" value="Download">
+        </div>
+        <div class="info">
+            <div class="video">
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    if (typeof module === 'object') {
+        window.module = module;
+        module = undefined;
+    }
+</script>
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/index.js"></script>
+
+</html>
