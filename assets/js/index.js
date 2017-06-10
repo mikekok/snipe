@@ -39,7 +39,7 @@ document.body.addEventListener('contextmenu', (e) => {
   while (node) {
     if (node.nodeName.match(/^(input|textarea)$/i) || node.isContentEditable) {
       InputMenu.popup(remote.getCurrentWindow())
-      break;
+      break
     }
     node = node.parentNode
   }
@@ -75,7 +75,7 @@ $('.download').click(function() {
 // On URL input paste
 $(".url").on("paste", function() {
   let currentURL = $(this).val()
-  download(currentURL)
+  getInfo(currentURL)
 })
 
 // Get YouTube Video Information
@@ -99,7 +99,7 @@ function download(url) {
   }
 }
 
-// Download YouTube Video
+// Download YouTube Video as MP4
 function downloadVideo(url) {
   var video = youtubedl(url, ['--format=22/17/18'], {
     cwd: __dirname
@@ -109,6 +109,7 @@ function downloadVideo(url) {
   })
 }
 
+// Download YouTube Video as MP3
 function downloadMP3(url) {
   var video = youtubedl(url, ['--format=bestaudio'], {
     cwd: __dirname
@@ -120,27 +121,9 @@ function downloadMP3(url) {
 
 // YouTube Video URL Validation
 function isYoutubeURL(url) {
-  var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+  var p = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/
   if (url.match(p)) {
-    return url.match(p)[1];
+    return url.match(p)[1]
   }
-  return false;
-}
-
-// KB to MB Convertion
-function convertBytes(bytes) {
-  if (bytes >= 1073741824) {
-    bytes = (bytes / 1073741824).toFixed(2) + ' GB'
-  } else if (bytes >= 1048576) {
-    bytes = (bytes / 1048576).toFixed(2) + ' MB'
-  } else if (bytes >= 1024) {
-    bytes = (bytes / 1024).toFixed(2) + ' KB'
-  } else if (bytes > 1) {
-    bytes = bytes + ' bytes'
-  } else if (bytes == 1) {
-    bytes = bytes + ' byte'
-  } else {
-    bytes = '0 byte'
-  }
-  return bytes
+  return false
 }
